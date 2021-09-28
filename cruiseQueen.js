@@ -38,10 +38,13 @@ function economy(id, isIncrease) {
 
 }
 document.getElementById("booked").addEventListener("click", function () {
-    const memo = document.getElementById("memo");
-    memo.style.display="block";
-    const main = document.getElementById("main");
-    main.style.display="none";
+    if(priceCalculation()>1){
+        const memo = document.getElementById("memo");
+        memo.style.display="block";
+        const main = document.getElementById("main");
+        main.style.display="none";
+    }
+    
 
   
 
@@ -69,12 +72,13 @@ function priceCalculation() {
     document.getElementById("total").innerText = total;
 
     //user Ticket
+    
     document.getElementById("firstPrice").innerText = firstPrice;
     document.getElementById("economyPrice").innerText = ecoPrice;
     document.getElementById("vatPrice").innerText = vat;
     document.getElementById("ticketPrice").innerText = total;
-    
 
+    return total;
     
 
 }
