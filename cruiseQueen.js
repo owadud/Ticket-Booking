@@ -7,7 +7,6 @@ document.getElementById("first-minusBtn").addEventListener("click", function () 
 });
 
 //secondClass
-
 document.getElementById("eco-plusBtn").addEventListener("click", function () {
     economy("ecoInputText", true);
 });
@@ -22,15 +21,12 @@ function economy(id, isIncrease) {
     let ecoAmount = ecoNumber;
     if (isIncrease == true) {
         ecoAmount = ecoNumber + 1;
-
     }
     if (isIncrease == false && ecoAmount >= 1) {
         ecoAmount = ecoNumber - 1;
     }
     ecoInput.value = ecoAmount;
-
     document.getElementById(id).innerText = ecoAmount;
-
     priceCalculation();
 }
 
@@ -43,20 +39,17 @@ document.getElementById("booked").addEventListener("click", function () {
         main.style.display="none";
     }
     else(){
-    console.alert("You didn't select any ticket");
+    alert("You didn't select any ticket");
     }
 })
 
 //calculation
-
 function priceCalculation() {
     //subtotal
     const ecoNumber = parseInt(document.getElementById("ecoInputText").value);
     const ecoPrice = (ecoNumber * 100);
-
     const firstNumber = parseInt(document.getElementById("firstText").value);
     const firstPrice = (firstNumber * 150);
-
     const subTotal = ecoPrice + firstPrice;
     document.getElementById("subTotal").innerText = subTotal;
     
@@ -74,8 +67,7 @@ function priceCalculation() {
     document.getElementById("vatPrice").innerText = vat;
     document.getElementById("ticketPrice").innerText = total;
 
-    return total;
-    
+    return total; 
 }
 
 
