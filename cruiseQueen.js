@@ -8,7 +8,6 @@ document.getElementById("first-minusBtn").addEventListener("click", function () 
 
 //secondClass
 
-
 document.getElementById("eco-plusBtn").addEventListener("click", function () {
     economy("ecoInputText", true);
 });
@@ -16,7 +15,7 @@ document.getElementById("eco-minusBtn").addEventListener("click", function () {
     economy("ecoInputText", false);
 });
 
-
+//Ticket Quantity  
 function economy(id, isIncrease) {
     const ecoInput = document.getElementById(id);
     const ecoNumber = parseInt(ecoInput.value);
@@ -33,10 +32,9 @@ function economy(id, isIncrease) {
     document.getElementById(id).innerText = ecoAmount;
 
     priceCalculation();
-
-
-
 }
+
+//user memo 
 document.getElementById("booked").addEventListener("click", function () {
     if(priceCalculation()>1){
         const memo = document.getElementById("memo");
@@ -44,10 +42,9 @@ document.getElementById("booked").addEventListener("click", function () {
         const main = document.getElementById("main");
         main.style.display="none";
     }
-    
-
-  
-
+    else(){
+    console.alert("You didn't select any ticket");
+    }
 })
 
 //calculation
@@ -62,7 +59,7 @@ function priceCalculation() {
 
     const subTotal = ecoPrice + firstPrice;
     document.getElementById("subTotal").innerText = subTotal;
-
+    
     //vat
     const vat = Math.round(subTotal * .1);
     document.getElementById("vat").innerText = vat;
@@ -71,8 +68,7 @@ function priceCalculation() {
     const total = subTotal + vat;
     document.getElementById("total").innerText = total;
 
-    //user Ticket
-    
+    //user Ticket 
     document.getElementById("firstPrice").innerText = firstPrice;
     document.getElementById("economyPrice").innerText = ecoPrice;
     document.getElementById("vatPrice").innerText = vat;
@@ -80,7 +76,6 @@ function priceCalculation() {
 
     return total;
     
-
 }
 
 
